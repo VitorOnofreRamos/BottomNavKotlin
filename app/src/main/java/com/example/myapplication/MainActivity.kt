@@ -60,12 +60,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonZ.setOnClickListener {
-            val equacao1Correta = 2 * xModel + 3 * yModel == 37
-            val equacao2Correta = xModel - yModel == -4
+            val eq1 = 2 * xModel + 3 * yModel == 37
+            val eq2 = xModel - yModel == -4
 
             when {
-                equacao1Correta && equacao2Correta -> viewZ.text = "Sucesso"
-                equacao1Correta || equacao2Correta -> viewZ.text = "Sucesso Parcial"
+                eq1 && eq2 -> viewZ.text = "Sucesso"
+                eq1 || eq2 -> viewZ.text = "Sucesso Parcial"
                 else -> viewZ.text = "Insucesso"
             }
         }
