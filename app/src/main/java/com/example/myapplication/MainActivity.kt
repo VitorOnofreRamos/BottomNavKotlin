@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         inicializar()
     }
 
-    fun inicializar(){
+    private fun inicializar(){
         buttonXUp.setOnClickListener {
             xModel += 1
             viewX.text = "Valor X = $xModel"
