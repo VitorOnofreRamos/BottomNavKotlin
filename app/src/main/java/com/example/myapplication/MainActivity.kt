@@ -3,36 +3,42 @@ package com.example.myapplication
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-private var xModel: Int=0;
-private var yModel: Int=0;
-
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewX: TextView
+    private lateinit var buttonXUp: Button
+    private lateinit var buttonXDown: Button
+
+    private lateinit var viewY: TextView
+    private lateinit var buttonYUp: Button
+    private lateinit var buttonYDown: Button
+
+    private lateinit var buttonZ: Button
+    private lateinit var viewZ: TextView
+
+    private var xModel = 0
+    private var yModel = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val viewX: TextView = findViewById(R.id.ID1_XMod_textView)
-        val buttonXUp: Button = findViewById(R.id.ID2_XUp_button)
-        val buttonXDown: Button = findViewById(R.id.ID3_XDown_button)
+        initViews()
 
-        val viewY: TextView = findViewById(R.id.ID4_YMod_textView)
-        val buttonYUp: Button = findViewById(R.id.ID5_YUp_button)
-        val buttonYDown: Button = findViewById(R.id.ID6_YDown_button)
+        inicializar()
+    }
 
-        val buttonZ: Button = findViewById(R.id.ID9_Final_button)
-        val viewZ: TextView = findViewById(R.id.ID10_Result_textView)
-
+    fun inicializar(){
         buttonXUp.setOnClickListener {
             xModel += 1
             viewX.text = "Valor X = $xModel"
@@ -63,5 +69,18 @@ class MainActivity : AppCompatActivity() {
                 else -> viewZ.text = "Insucesso"
             }
         }
+    }
+
+    private fun initViews() {
+        viewX = findViewById(R.id.ID1_XMod_textView)
+        buttonXUp = findViewById(R.id.ID2_XUp_button)
+        buttonXDown = findViewById(R.id.ID3_XDown_button)
+
+        viewY = findViewById(R.id.ID4_YMod_textView)
+        buttonYUp = findViewById(R.id.ID5_YUp_button)
+        buttonYDown = findViewById(R.id.ID6_YDown_button)
+
+        buttonZ = findViewById(R.id.ID9_Final_button)
+        viewZ = findViewById(R.id.ID10_Result_textView)
     }
 }
