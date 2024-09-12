@@ -1,27 +1,18 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.activities.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewX: TextView
-    private lateinit var buttonXUp: Button
-    private lateinit var buttonXDown: Button
-
-    private lateinit var viewY: TextView
-    private lateinit var buttonYUp: Button
-    private lateinit var buttonYDown: Button
-
-    private lateinit var buttonZ: Button
-    private lateinit var viewZ: TextView
-
-    private var xModel = 0
-    private var yModel = 0
+    private lateinit var buttonHome: Button
+    private lateinit var buttonHistory: Button
+    private lateinit var buttonTask: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,53 +25,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         initViews()
-
         inicializar()
     }
 
     private fun inicializar(){
-        buttonXUp.setOnClickListener {
-            xModel += 1
-            viewX.text = "Valor X = $xModel"
+        buttonHome.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
 
-        buttonXDown.setOnClickListener {
-            xModel -= 1
-            viewX.text = "Valor X = $xModel"
+        buttonHistory.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
         }
 
-        buttonYUp.setOnClickListener {
-            yModel += 1
-            viewY.text = "Valor Y = $yModel"
-        }
-
-        buttonYDown.setOnClickListener {
-            yModel -= 1
-            viewY.text = "Valor Y = $yModel"
-        }
-
-        buttonZ.setOnClickListener {
-            val eq1 = 2 * xModel + 3 * yModel == 37
-            val eq2 = xModel - yModel == -4
-
-            when {
-                eq1 && eq2 -> viewZ.text = "Sucesso"
-                eq1 || eq2 -> viewZ.text = "Sucesso Parcial"
-                else -> viewZ.text = "Insucesso"
-            }
+        buttonTask.setOnClickListener {
+            val intent = Intent(this, TaskActivity::class.java)
+            startActivity(intent)
         }
     }
 
     private fun initViews() {
-        viewX = findViewById(R.id.ID1_XMod_textView)
-        buttonXUp = findViewById(R.id.ID2_XUp_button)
-        buttonXDown = findViewById(R.id.ID3_XDown_button)
-
-        viewY = findViewById(R.id.ID4_YMod_textView)
-        buttonYUp = findViewById(R.id.ID5_YUp_button)
-        buttonYDown = findViewById(R.id.ID6_YDown_button)
-
-        buttonZ = findViewById(R.id.ID9_Final_button)
-        viewZ = findViewById(R.id.ID10_Result_textView)
+        buttonHome = findViewById(R.id.homeButton)
+        buttonHistory = findViewById(R.id.historyButton)
+        buttonTask = findViewById(R.id.taskButton)
     }
 }

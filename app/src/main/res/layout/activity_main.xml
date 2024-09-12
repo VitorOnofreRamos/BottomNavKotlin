@@ -7,127 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/ID1_XMod_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="70dp"
-        android:text="Valor X = 0"
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/baseline_home_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/historyButton"
+        app:layout_constraintStart_toEndOf="@+id/taskButton" />
+
+    <ImageButton
+        android:id="@+id/historyButton"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@drawable/baseline_access_time_24" />
 
-    <Button
-        android:id="@+id/ID2_XUp_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"
-        android:text="X +"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID1_XMod_textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/ID3_XDown_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:text="X -"
+    <ImageButton
+        android:id="@+id/taskButton"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID2_XUp_button"
-        app:layout_constraintVertical_bias="0.00999999" />
+        app:srcCompat="@drawable/baseline_assignment_24" />
 
     <TextView
-        android:id="@+id/ID4_YMod_textView"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="35dp"
-        android:text="Valor Y = 0"
+        android:text="Página Principal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/ID1_XMod_textView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/ID5_YUp_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="10dp"
-        android:text="Y +"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID4_YMod_textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/ID6_YDown_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:text="Y -"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID5_YUp_button"
-        app:layout_constraintVertical_bias="0.00999999" />
-
-    <Button
-        android:id="@+id/ID9_Final_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Finalizar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ID6_YDown_button"
-        app:layout_constraintStart_toEndOf="@+id/ID3_XDown_button"
-        app:layout_constraintTop_toBottomOf="@+id/ID8_Equation_textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/ID8_Equation_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="x - y = -4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ID6_YDown_button"
-        app:layout_constraintStart_toEndOf="@+id/ID3_XDown_button"
-        app:layout_constraintTop_toBottomOf="@+id/ID7_Equation_textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/ID7_Equation_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:text="2x + 3y = 37"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ID6_YDown_button"
-        app:layout_constraintStart_toEndOf="@+id/ID3_XDown_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/ID10_Result_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Resultado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ID6_YDown_button"
-        app:layout_constraintStart_toEndOf="@+id/ID3_XDown_button"
-        app:layout_constraintTop_toBottomOf="@+id/ID9_Final_button"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
