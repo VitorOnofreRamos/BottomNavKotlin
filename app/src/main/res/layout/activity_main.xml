@@ -8,31 +8,34 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/homeButton"
-        android:layout_width="120dp"
+        android:id="@+id/ID1_homeButton"
+        android:layout_width="105dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="Button Home"
         android:src="@drawable/baseline_home_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/historyButton"
-        app:layout_constraintStart_toEndOf="@+id/taskButton" />
+        app:layout_constraintEnd_toStartOf="@+id/ID2_historyButton"
+        app:layout_constraintStart_toEndOf="@+id/ID3_taskButton" />
 
     <ImageButton
-        android:id="@+id/historyButton"
-        android:layout_width="120dp"
+        android:id="@+id/ID2_historyButton"
+        android:layout_width="105dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="Button History"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_access_time_24" />
 
     <ImageButton
-        android:id="@+id/taskButton"
-        android:layout_width="120dp"
+        android:id="@+id/ID3_taskButton"
+        android:layout_width="105dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="Button Task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/baseline_assignment_24" />
